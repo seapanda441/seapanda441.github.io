@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="icon-192x192.png">
+  <link rel="stylesheet" href="orca.css">
+  <title>テレグラム</title>
+  <style type="text/css">
+    body {
+      background-color: green;
+      text-align: center;
+      color: white;
+    }
+    #styled {
+      border: 0;
+      line-height: 2.5;
+      padding: 0 60px;
+      font-size: 20px;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 1px black;
+      border-radius: 10px;
+      background-color: blue;
+      background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+      box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    }
+    #name1,#name2 {
+      width: 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="font-size: 80px;">
+    21cntr Tlgrm
+  </div>
+  <div style="font-size: 30px;">
+    send message to:(Use Number Only)
+    <br>
+    <input type="number" id="name1">
+    <br>
+    contents:(Use Number and 半角Alphabet)
+    <br>
+    <input type="text" pattern="^[a-zA-Z0-9]+$" id="name2">
+    <br>
+    <a href="javascript:butotnClick();" id="sample1">
+      <input type="button" value="Submit" id="styled">
+    </a>
+  </div>
+  <iframe width="800" height="400" frameborder="0" marginheight="0" marginwidth="0"
+    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQeVwSzYF6XGxId2s8u2pGu9umgyYn_fkl-XxHYUpvr9RMnwa0rMvi1QXgKgG68t4KMMR5_EZhgIPYg/pubhtml?widget=true&amp;headers=false">
+  </iframe>
+  <div style="font-size: 20px;">
+    Tani. Hiro. Toyohashi Lab.
+    <br>
+    Founded on May 31st, 2024.
+  </div>
+
+  <script type="text/javascript">
+    function butotnClick() {
+      target = document.getElementById("sample1");
+      name1d = document.getElementById("name1");
+      name1v = name1d.value;
+      name2d = document.getElementById("name2");
+      name2v = name2d.value;
+      target.href = "https://script.google.com/macros/s/AKfycbws-jMmAWxrYB-vnIl-ww5UV_ZaleIkPKa7yGkAwNV-q3vkpaQEpcUqSoa7fgT7eY4/exec?q=" + name1v + "&r=" + name2v;
+      return false;
+    };
+  </script>
+</body>
+
+</html>
