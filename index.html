@@ -11,9 +11,9 @@
 </head>
 <body>
   <p style="font-size: 2vw;">除夜の鐘</p>
-  <p style="font-size: 4vw;">ただいまX回鐘が撞かれています<br>
-  現在時刻: <span id="timetext"></span></p>
-  <p style="font-size: 2vw;">HONGANJI, TOTTORI 2025→2026</p>
+  <p style="font-size: 5vw;">ただいまX回鐘が撞かれています</p>
+  <p style="font-size: 3vw;">現在時刻: <span id="timetext"></span></p>
+  <p style="font-size: 2vw;">HONGANJI: Tottori City, Tottori Prefecture, JAPAN</p>
   <script type="text/javascript">
     showTime();
     function showTime() {
@@ -27,7 +27,7 @@
       var text = nowyear + "年 " + nowmonth + "/" + nowday + " " + nowhour + ":" + nowminutes + ":" + nowseconds; 
       document.getElementById("timetext").innerHTML = text;
     }
-    setInterval(showTime, 2000);
+    setInterval(showTime, 800);
   </script>
 </body>
 </html>
