@@ -10,12 +10,11 @@
   </style>
 </head>
 <body>
-  <p>除夜の鐘<br>
-  ただいまX回鐘が撞かれています<br>
-  現在時刻: <span id="timetext"></span><br>
-  HONGANJI, TOTTORI 2025→2026</p>
+  <p style="font-size: 2vw;">除夜の鐘</p>
+  <p style="font-size: 4vw;">ただいまX回鐘が撞かれています<br>
+  現在時刻: <span id="timetext"></span></p>
+  <p style="font-size: 2vw;">HONGANJI, TOTTORI 2025→2026</p>
   <script type="text/javascript">
-    document.getElementById("timetext").innerHTML = showTime();
     function showTime() {
       var now = new Date();
       var nowyear = now.getFullYear();
@@ -25,8 +24,9 @@
       var nowminutes = now.getMinutes();
       var nowseconds = now.getSeconds();
       var text = nowyear + "年 " + nowmonth + "/" + nowday + " " + nowhour + "：" + nowminutes + "：" + nowseconds; 
-      return text;
+      document.getElementById("timetext").innerHTML = text;
     }
+    setInterval(showTime, 2000);
   </script>
 </body>
 </html>
