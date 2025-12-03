@@ -15,15 +15,16 @@
   現在時刻: <span id="timetext"></span></p>
   <p style="font-size: 2vw;">HONGANJI, TOTTORI 2025→2026</p>
   <script type="text/javascript">
+    showTime();
     function showTime() {
       var now = new Date();
       var nowyear = now.getFullYear();
-      var nowmonth = now.getMonth();
+      var nowmonth = now.getMonth() + 1;
       var nowday = now.getDate();
       var nowhour = now.getHours();
       var nowminutes = now.getMinutes();
       var nowseconds = now.getSeconds();
-      var text = nowyear + "年 " + nowmonth + "/" + nowday + " " + nowhour + "：" + nowminutes + "：" + nowseconds; 
+      var text = nowyear + "年 " + nowmonth + "/" + nowday + " " + nowhour + ":" + nowminutes + ":" + nowseconds; 
       document.getElementById("timetext").innerHTML = text;
     }
     setInterval(showTime, 2000);
