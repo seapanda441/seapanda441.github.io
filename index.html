@@ -29,7 +29,7 @@
       var text = nowyear + "年 " + nowmonth + "/" + nowday + " " + nowhour + ":" + nowminutes + ":" + nowseconds; 
       document.getElementById("timetext").innerHTML = text;
     }
-    function loadNumber() {
+    async function loadNumber() {
       const res = await fetch(url);
       const text = await res.text();
       const json = JSON.parse(text.substring(47).slice(0, -2));
