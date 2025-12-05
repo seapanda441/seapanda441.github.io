@@ -11,11 +11,13 @@
 </head>
 <body>
   <p style="font-size: 2vw;">除夜の鐘 2025→2026</p>
-  <p style="font-size: 5vw;">ただいまX回鐘が撞かれています</p>
+  <p style="font-size: 5vw;">ただいま<span id="nowNumber"></span>回鐘が撞かれています</p>
   <p style="font-size: 3vw;">現在時刻: <span id="timetext"></span></p>
   <p style="font-size: 2vw;">HONGANJI: Tottori City, Tottori Prefecture, JAPAN</p>
   <script type="text/javascript">
+    const url = "https://docs.google.com/spreadsheets/d/1HijQK_3wA5z1uy9BBawe1EAEAxorlyP2yJKqyyN_Xdk/gviz/tq?tqx=out:json&sheet=A1";
     showTime();
+    loadNumber();
     function showTime() {
       var now = new Date();
       var nowyear = now.getFullYear();
@@ -27,7 +29,15 @@
       var text = nowyear + "年 " + nowmonth + "/" + nowday + " " + nowhour + ":" + nowminutes + ":" + nowseconds; 
       document.getElementById("timetext").innerHTML = text;
     }
-    setInterval(showTime, 800);
+    function loadNumber() {
+      const res = await fetch(url);
+      const text = await res.text();
+      const json = JSON.parse(text.substring(47).slice(0, -2));
+      const value = json.table.rows[0].c[0].v;
+      document.getElementById("nowNumber").innerText = value;
+    }
+    setInterval(showTime, 990);
+    setInterval(loadNumber, 990);
   </script>
 </body>
 </html>
