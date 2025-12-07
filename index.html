@@ -5,12 +5,13 @@
   <style>
     body{
       text-align: center;
-      font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+      font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "ＭＳ Ｐゴシック", "MS PGothic", arial, "Helvetica Neue", "Helvetica", "Yu Gothic";
+      background-color: linen;
     }
   </style>
 </head>
 <body>
-  <p style="font-size: 2vw;">除夜の鐘 2025→2026</p>
+  <p style="font-size: 2vw;">除夜の鐘 2025&gt;2026</p>
   <p style="font-size: 5vw;">ただいま<span id="nowNumber"></span>回鐘が撞かれています</p>
   <p style="font-size: 3vw;">現在時刻: <span id="timetext"></span></p>
   <p style="font-size: 2vw;">HONGANJI: Tottori City, Tottori Prefecture, JAPAN</p>
@@ -22,10 +23,25 @@
       var now = new Date();
       var nowyear = now.getFullYear();
       var nowmonth = now.getMonth() + 1;
+      if (nowmonth < 10) {
+        nowmonth = '0' + {nowmonth}
+      }
       var nowday = now.getDate();
+      if (nowday < 10) {
+        nowday = '0' + {nowday}
+      }
       var nowhour = now.getHours();
+      if (nowhour < 10) {
+        nowhour = '0' + {nowhour}
+      }
       var nowminutes = now.getMinutes();
+      if (nowminitues < 10) {
+        nowminitues = '0' + {nowminitues}
+      }
       var nowseconds = now.getSeconds();
+      if (nowseconds < 10) {
+        nowseconds = '0' + {nowseconds}
+      }
       var text = nowyear + "年 " + nowmonth + "/" + nowday + " " + nowhour + ":" + nowminutes + ":" + nowseconds; 
       document.getElementById("timetext").innerHTML = text;
     }
