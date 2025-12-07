@@ -24,23 +24,23 @@
       var nowyear = now.getFullYear();
       var nowmonth = now.getMonth() + 1;
       if (nowmonth < 10) {
-        nowmonth = '0' + {nowmonth}
+        var nowmonth = '0' + String(nowmonth);
       }
       var nowday = now.getDate();
       if (nowday < 10) {
-        nowday = '0' + {nowday}
+        var nowday = '0' + String(nowday);
       }
       var nowhour = now.getHours();
       if (nowhour < 10) {
-        nowhour = '0' + {nowhour}
+        var nowhour = '0' + String(nowhour);
       }
       var nowminutes = now.getMinutes();
       if (nowminutes < 10) {
-        nowminutes = '0' + {nowminutes}
+        var nowminutes = '0' + String(nowminutes);
       }
       var nowseconds = now.getSeconds();
       if (nowseconds < 10) {
-        nowseconds = '0' + {nowseconds}
+        var nowseconds = '0' + String(nowseconds);
       }
       var text = nowyear + "年 " + nowmonth + "/" + nowday + " " + nowhour + ":" + nowminutes + ":" + nowseconds; 
       document.getElementById("timetext").innerHTML = text;
